@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVista University - Premier Private University in Bangalore</title>
+    <meta name="description" content="TechVista University offers world-class education with excellent placements, modern facilities, and diverse courses. Apply now!">
+    
+    <!-- Tailwind CSS (Production) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-university-id="1" class="font-sans">
+    
+    <!-- Alert Message -->
+    <div id="alert-message" class="alert" style="display: none;"></div>
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition" id="university-name">TechVista University</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="#overview" class="text-gray-700 hover:text-blue-600 transition">Overview</a>
+                    <a href="#courses" class="text-gray-700 hover:text-blue-600 transition">Courses</a>
+                    <a href="#fees" class="text-gray-700 hover:text-blue-600 transition">Fees</a>
+                    <a href="#placements" class="text-gray-700 hover:text-blue-600 transition">Placements</a>
+                    <a href="#facilities" class="text-gray-700 hover:text-blue-600 transition">Facilities</a>
+                    <a href="#apply" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Apply Now</a>
+                </div>
+                <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">TechVista University</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">Shaping Futures Through Excellence in Education</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button id="check-fees-btn" class="btn btn-primary">Check Course-wise Fees</button>
+                <button id="download-brochure-btn" class="btn btn-outline" style="background-color: rgba(255,255,255,0.2); border-color: white; color: white;">Download Brochure</button>
+                <a href="#apply" class="btn btn-secondary">Apply Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Overview Section -->
+    <section id="overview" class="section bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="section-title">University Overview</h2>
+            <p class="section-subtitle">Excellence in Education Since 2010</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">2010</div>
+                    <div class="text-gray-600">Established</div>
+                </div>
+                <div class="card">
+                    <div class="text-4xl font-bold text-green-600 mb-2">15,000+</div>
+                    <div class="text-gray-600">Students</div>
+                </div>
+                <div class="card">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">500+</div>
+                    <div class="text-gray-600">Faculty Members</div>
+                </div>
+                <div class="card">
+                    <div class="text-4xl font-bold text-orange-600 mb-2">NAAC A+</div>
+                    <div class="text-gray-600">Accreditation</div>
+                </div>
+                <div class="card">
+                    <div class="text-4xl font-bold text-red-600 mb-2">Bangalore</div>
+                    <div class="text-gray-600">Location</div>
+                </div>
+                <div class="card">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">Private</div>
+                    <div class="text-gray-600">University Type</div>
+                </div>
+            </div>
+            
+            <div class="mt-12 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold mb-4 text-center">About TechVista University</h3>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    TechVista University, established in 2010, is a premier private university located in the heart of Bangalore, 
+                    India's Silicon Valley. With a commitment to academic excellence and innovation, we offer a wide range of 
+                    undergraduate and postgraduate programs across engineering, management, and technology disciplines.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed mt-4">
+                    Our state-of-the-art infrastructure, experienced faculty, and industry partnerships ensure that our students 
+                    receive world-class education and are well-prepared for successful careers. We pride ourselves on our high 
+                    placement rates and the success of our alumni across various industries.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Courses Section -->
+    <section id="courses" class="section">
+        <div class="container mx-auto">
+            <h2 class="section-title">Our Courses</h2>
+            <p class="section-subtitle">Choose from a wide range of programs designed for your success</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="courses-list">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Computer Science Engineering</h3>
+                    <p class="text-gray-600 mb-4">Duration: 4 years</p>
+                    <p class="text-gray-700">Comprehensive program covering software development, algorithms, data structures, and emerging technologies.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Mechanical Engineering</h3>
+                    <p class="text-gray-600 mb-4">Duration: 4 years</p>
+                    <p class="text-gray-700">Learn design, manufacturing, and maintenance of mechanical systems with hands-on experience.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Business Administration (MBA)</h3>
+                    <p class="text-gray-600 mb-4">Duration: 2 years</p>
+                    <p class="text-gray-700">Develop leadership skills and business acumen through case studies and industry projects.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Electronics & Communication</h3>
+                    <p class="text-gray-600 mb-4">Duration: 4 years</p>
+                    <p class="text-gray-700">Explore electronics, communication systems, and embedded technologies in modern applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Fees Section -->
+    <section id="fees" class="section bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="section-title">Fee Structure</h2>
+            <p class="section-subtitle">Transparent and affordable fee structure for all courses</p>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="card text-center">
+                    <p class="text-gray-700 text-lg mb-4">
+                        Our fee structure is designed to be transparent and affordable. Fees vary by course and include tuition, 
+                        laboratory, library, and other academic facilities.
+                    </p>
+                    <button id="check-fees-btn-2" class="btn btn-primary">View Detailed Course-wise Fees</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Placements Section -->
+    <section id="placements" class="section">
+        <div class="container mx-auto">
+            <h2 class="section-title">Placements</h2>
+            <p class="section-subtitle">Excellent placement opportunities with top companies</p>
+            
+            <div id="placements-data" class="max-w-6xl mx-auto">
+                <!-- Dynamic content loaded from API -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Facilities Section -->
+    <section id="facilities" class="section bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="section-title">Campus Facilities</h2>
+            <p class="section-subtitle">World-class infrastructure for holistic development</p>
+            
+            <div class="max-w-4xl mx-auto">
+                <ul id="facilities-list" class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                    <!-- Dynamic content loaded from API -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lead Form Section -->
+    <section id="apply" class="section bg-blue-600 text-white">
+        <div class="container mx-auto max-w-2xl">
+            <h2 class="section-title text-white">Apply Now</h2>
+            <p class="section-subtitle text-blue-100">Fill out the form below and our admission team will contact you</p>
+            
+            <form id="lead-form" class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
+                <div class="form-group">
+                    <label class="form-label" for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" class="form-input" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Email *</label>
+                    <input type="email" id="email" name="email" class="form-input" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number (10-digit, India) *</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required placeholder="9876543210" maxlength="10" pattern="[6-9][0-9]{9}">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="state">State *</label>
+                    <select id="state" name="state" class="form-select" required>
+                        <option value="">Select your state</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Puducherry">Puducherry</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="courseInterested">Course Interested *</label>
+                    <select id="courseInterested" name="courseInterested" class="form-select" required>
+                        <option value="">Select a course</option>
+                        <option value="Computer Science Engineering">Computer Science Engineering</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Business Administration (MBA)">Business Administration (MBA)</option>
+                        <option value="Electronics & Communication">Electronics & Communication</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="intakeYear">Intake Year *</label>
+                    <select id="intakeYear" name="intakeYear" class="form-select" required>
+                        <option value="">Select intake year</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent" class="text-sm">I agree to the terms and conditions and consent to being contacted by the university *</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-full">Submit Application</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 TechVista University. All rights reserved.</p>
+            <p class="mt-2 text-gray-400">Bangalore, Karnataka, India</p>
+        </div>
+    </footer>
+    
+    <!-- Fee Modal -->
+    <div id="fee-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="fee-modal-content">
+                <!-- Dynamic content loaded from API -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Common JavaScript -->
+    <script src="/js/common.js"></script>
+    <script>
+        // Additional button handler
+        document.getElementById('check-fees-btn-2')?.addEventListener('click', () => loadCourseFees('1'));
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+node_modules/
+.env
+.DS_Store
+*.log
+dist/
+build/
+
+# Keep assets/images but ignore large files
+assets/images/*.psd
+assets/images/*.ai
+assets/images/*.sketch
