@@ -19,6 +19,15 @@ app.use('/api', apiRoutes);
 // Page routes
 app.use('/', pageRoutes);
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error('Error:', err);
+  res.status(500).json({ 
+    error: 'Internal Server Error',
+    message: process.env.NODE_ENV === 'development' ? err.message : 'An error occurred'
+  });
+});
+
 // Export for Vercel
 module.exports = app;
 

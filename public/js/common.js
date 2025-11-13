@@ -240,11 +240,19 @@ async function loadUniversityData(universityId) {
     
     // Load facilities
     const facilitiesResponse = await fetch(`${API_BASE_URL}/university/${universityId}/facilities`);
+    if (!facilitiesResponse.ok) throw new Error(`Facilities API error: ${facilitiesResponse.status}`);
     const facilitiesData = await facilitiesResponse.json();
     
     // Load placements
     const placementsResponse = await fetch(`${API_BASE_URL}/university/${universityId}/placements`);
+    if (!placementsResponse.ok) throw new Error(`Placements API error: ${placementsResponse.status}`);
     const placements = await placementsResponse.json();
+    
+    // Validate placements data
+    if (!placements.topRecruiters || !Array.isArray(placements.topRecruiters)) {
+      console.warn('Invalid placements data structure:', placements);
+      throw new Error('Invalid placements data received from API');
+    }
     
     // Update DOM elements if they exist
     const universityNameEl = document.getElementById('university-name');
@@ -254,7 +262,7 @@ async function loadUniversityData(universityId) {
     
     // Update facilities list
     const facilitiesList = document.getElementById('facilities-list');
-    if (facilitiesList) {
+    if (facilitiesList && facilitiesData.facilities && Array.isArray(facilitiesData.facilities)) {
       facilitiesList.innerHTML = facilitiesData.facilities.map(facility => 
         `<li class="mb-2">${facility}</li>`
       ).join('');
@@ -262,30 +270,30 @@ async function loadUniversityData(universityId) {
     
     // Update placements data
     const placementsEl = document.getElementById('placements-data');
-    if (placementsEl) {
+    if (placementsEl && placements) {
       placementsEl.innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <div class="card text-center">
-            <div class="text-3xl font-bold text-blue-600 mb-2">${placements.placementRate}</div>
+            <div class="text-3xl font-bold text-blue-600 mb-2">${placements.placementRate || 'N/A'}</div>
             <div class="text-gray-600">Placement Rate</div>
           </div>
           <div class="card text-center">
-            <div class="text-3xl font-bold text-green-600 mb-2">₹${(placements.averagePackage / 100000).toFixed(1)}L</div>
+            <div class="text-3xl font-bold text-green-600 mb-2">₹${placements.averagePackage ? (placements.averagePackage / 100000).toFixed(1) : 'N/A'}L</div>
             <div class="text-gray-600">Average Package</div>
           </div>
           <div class="card text-center">
-            <div class="text-3xl font-bold text-purple-600 mb-2">₹${(placements.highestPackage / 100000).toFixed(1)}L</div>
+            <div class="text-3xl font-bold text-purple-600 mb-2">₹${placements.highestPackage ? (placements.highestPackage / 100000).toFixed(1) : 'N/A'}L</div>
             <div class="text-gray-600">Highest Package</div>
           </div>
           <div class="card text-center">
-            <div class="text-3xl font-bold text-orange-600 mb-2">${placements.totalOffers}</div>
+            <div class="text-3xl font-bold text-orange-600 mb-2">${placements.totalOffers || 'N/A'}</div>
             <div class="text-gray-600">Total Offers</div>
           </div>
         </div>
         <div class="mt-4">
           <h3 class="text-xl font-semibold mb-3">Top Recruiters</h3>
           <div class="flex flex-wrap gap-2">
-            ${placements.topRecruiters.map(recruiter => 
+            ${(placements.topRecruiters || []).map(recruiter => 
               `<span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">${recruiter}</span>`
             ).join('')}
           </div>
@@ -295,6 +303,11 @@ async function loadUniversityData(universityId) {
     
   } catch (error) {
     console.error('Error loading university data:', error);
+    // Show user-friendly error message
+    const placementsEl = document.getElementById('placements-data');
+    if (placementsEl) {
+      placementsEl.innerHTML = `<div class="alert alert-error">Unable to load placement data. Please try refreshing the page.</div>`;
+    }
   }
 }
 
