@@ -2,11 +2,7 @@
 
 Two beautiful, responsive landing pages for private universities with integrated lead forms, APIs, and Pipedream workflow integration.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Project-blue?style=for-the-badge)](https://your-deployed-url.vercel.app)
-
-> **Note:** Replace `https://your-deployed-url.vercel.app` above with your actual deployed URL after deployment.
-
----
+[![Live Demo]](https://university-list-taupe.vercel.app/)
 
 ## 📸 Screenshots
 
