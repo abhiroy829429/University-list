@@ -161,19 +161,7 @@ The lead form includes:
 
 ---
 
-## 📄 License
-
-ISC License
-
----
-
-## 👤 Author
-
-Your Name - [Your GitHub](https://github.com/yourusername)
-
----
-
-## 🙏 Acknowledgments
+## Tech Stack
 
 - Tailwind CSS for styling
 - Pipedream for workflow automation
@@ -181,4 +169,3 @@ Your Name - [Your GitHub](https://github.com/yourusername)
 
 ---
 
-**⭐ If you find this project helpful, please give it a star!**
