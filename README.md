@@ -2,7 +2,15 @@
 
 Two beautiful, responsive landing pages for private universities with integrated lead forms, APIs, and Pipedream workflow integration.
 
-[![Live Demo]](https://university-list-taupe.vercel.app/)
+<!-- Large live demo preview -->
+<p align="center">
+   <a href="https://university-list-taupe.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <!-- Use the home screenshot as a large clickable preview -->
+      <img src="assets/images/home.png" alt="Live Demo - University Landing Pages" style="width:100%;max-width:980px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.12);">
+   </a>
+</p>
+
+[Open Live Demo »](https://university-list-taupe.vercel.app/)
 
 ## 📸 Screenshots
 
